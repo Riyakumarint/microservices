@@ -1,0 +1,37 @@
+services:
+  accounts:
+    image: "riya0524/accounts:v1"
+    container_name: accounts-super
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - riya0524
+  loans:
+    image: "riya0524/loans:v1"
+    container_name: loans-super
+    ports:
+      - "8082:8082"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - riya0524
+  cards:
+    image: "riya0524/cards:v1"
+    container_name: cards-super
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - riya0524
+networks:
+  riya0524:
+    driver: "bridge"
