@@ -14,6 +14,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import lombok.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -30,7 +31,6 @@ import org.springframework.web.bind.annotation.*;
 public class AccountController {
 
     private IAccountsService iAccountsService;
-
     @Operation(
             summary = "CREATE Account REST API",
             description = "REST API to create new Customer & Account inside Bank"

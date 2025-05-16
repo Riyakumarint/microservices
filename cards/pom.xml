@@ -96,7 +96,7 @@
 				<version>3.4.5</version>
 				<configuration>
 					<to>
-						<image>riya0524/${project.artifactId}:v1</image>
+						<image>riya0524/${project.artifactId}:v2</image>
 					</to>
 				</configuration>
 			</plugin>
