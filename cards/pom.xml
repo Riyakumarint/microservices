@@ -114,10 +114,10 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
-				<version>3.4.5</version>
+				<version>3.4.2</version>
 				<configuration>
 					<to>
-						<image>riya0524/${project.artifactId}:v2</image>
+						<image>riya0524/${project.artifactId}:s6</image>
 					</to>
 				</configuration>
 			</plugin>
