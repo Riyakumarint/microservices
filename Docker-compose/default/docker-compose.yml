@@ -1,0 +1,60 @@
+services:
+  configserver:
+    image: "riya0524/configserver:v2"
+    container_name: configserver-super
+    ports:
+      - "8071:8071"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - riya0524
+  accounts:
+    image: "riya0524/accounts:v2"
+    container_name: accounts-super
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - riya0524
+    environment:
+      SPRING_APPLICATON_NAME: "accounts"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_PROFILES_ACTIVE: default
+  loans:
+    image: "riya0524/loans:v2"
+    container_name: loans-super
+    ports:
+      - "8082:8082"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - riya0524
+    environment:
+      SPRING_APPLICATON_NAME: "loans"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_PROFILES_ACTIVE: default
+  cards:
+    image: "riya0524/cards:v2"
+    container_name: cards-super
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - riya0524
+    environment:
+      SPRING_APPLICATON_NAME: "cards"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_PROFILES_ACTIVE: default
+networks:
+  riya0524:
+    driver: "bridge"
